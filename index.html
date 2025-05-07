@@ -8,24 +8,23 @@
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #000;
+      background-color: #333; /* Темно-серый цвет */
       overflow-x: hidden;
     }
 
     .scroll-container {
       width: 100%;
-      text-align: center; /* Чтобы изображения были по центру */
+      display: flex;
+      flex-direction: column; /* Убираем отступы между изображениями */
+      align-items: center; /* Выравнивание картинок по центру */
     }
 
     img {
       display: block;
-      max-width: 80%; /* Уменьшаем ширину до 80% от экрана */
+      max-width: 80%; /* Ограничиваем ширину изображения до 80% */
       height: auto;
-      margin: 0;
+      margin: 0; /* Убираем все отступы */
       padding: 0;
-      margin-bottom: 20px;
-      margin-left: auto;
-      margin-right: auto; /* Для выравнивания по центру */
     }
   </style>
 </head>
