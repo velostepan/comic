@@ -14,17 +14,15 @@
 
     .scroll-container {
       width: 100%;
-      display: flex;
-      flex-direction: column; /* Убираем отступы между изображениями */
-      align-items: center; /* Выравнивание картинок по центру */
+      text-align: center; /* Центрируем все картинки */
     }
 
     img {
-      display: block;
-      max-width: 80%; /* Ограничиваем ширину изображения до 80% */
+      display: inline-block; /* Используем inline-block для картинки */
+      max-width: 80%; /* Ограничиваем ширину картинки */
       height: auto;
-      margin: 0; /* Убираем все отступы */
-      padding: 0;
+      margin: 0; /* Убираем отступы */
+      padding: 0; /* Убираем паддинги */
     }
   </style>
 </head>
