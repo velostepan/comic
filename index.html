@@ -17,8 +17,15 @@
       text-align: center; /* Центрируем все картинки */
     }
 
+    .page-holder {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
     img {
-      display: inline-block; /* Используем inline-block для картинки */
+      display: block; /* Обеспечиваем, чтобы изображения шли друг за другом */
       max-width: 80%; /* Ограничиваем ширину картинки */
       height: auto;
       margin: 0; /* Убираем отступы */
@@ -28,15 +35,33 @@
 </head>
 <body>
   <div class="scroll-container">
-    <img src="images/comic_image1.png" alt="" />
-    <img src="images/comic_image2.png" alt="" />
-    <img src="images/comic_image3.png" alt="" />
-    <img src="images/comic_image4.png" alt="" />
-    <img src="images/comic_image5.png" alt="" />
-    <img src="images/comic_image6.png" alt="" />
-    <img src="images/comic_image7.png" alt="" />
-    <img src="images/comic_image8.png" alt="" />
-    <img src="images/comic_image9.png" alt="" />
+    <div class="page-holder">
+      <img src="images/comic_image1.png" alt="" />
+    </div>
+    <div class="page-holder">
+      <img src="images/comic_image2.png" alt="" />
+    </div>
+    <div class="page-holder">
+      <img src="images/comic_image3.png" alt="" />
+    </div>
+    <div class="page-holder">
+      <img src="images/comic_image4.png" alt="" />
+    </div>
+    <div class="page-holder">
+      <img src="images/comic_image5.png" alt="" />
+    </div>
+    <div class="page-holder">
+      <img src="images/comic_image6.png" alt="" />
+    </div>
+    <div class="page-holder">
+      <img src="images/comic_image7.png" alt="" />
+    </div>
+    <div class="page-holder">
+      <img src="images/comic_image8.png" alt="" />
+    </div>
+    <div class="page-holder">
+      <img src="images/comic_image9.png" alt="" />
+    </div>
   </div>
 </body>
 </html>
