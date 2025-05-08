@@ -14,20 +14,24 @@
 
     .scroll-container {
       width: 100%;
-      text-align: center; /* Центрируем все картинки */
+      display: flex;
+      flex-direction: column; /* Расставляем картинки вертикально */
+      align-items: center; /* Выравниваем контейнеры по центру */
+      justify-content: center; /* Центрируем содержимое по вертикали */
     }
 
     .page-holder {
       width: 100%;
-      text-align: center;
+      display: flex;
+      justify-content: center; /* Центрируем изображение внутри контейнера */
       margin: 0;
       padding: 0;
     }
 
     img {
-      display: block; /* Обеспечиваем, чтобы изображения шли друг за другом */
-      max-width: 80%; /* Ограничиваем ширину картинки */
-      height: auto;
+      display: block; /* Убираем лишние пробелы вокруг изображения */
+      width: 100%; /* Ширина изображения равна ширине контейнера */
+      height: auto; /* Поддерживаем пропорции */
       margin: 0; /* Убираем отступы */
       padding: 0; /* Убираем паддинги */
     }
