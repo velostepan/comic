@@ -5,67 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Комикс</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      background-color: #333; /* Темно-серый цвет */
+      background-color: #333;
+      color: #fff;
+      font-family: sans-serif;
       overflow-x: hidden;
     }
 
-    .scroll-container {
+    nav {
+      background-color: #222;
+      padding: 1em;
+      text-align: right;
+    }
+
+    .accordion-container {
+      margin: 2em auto;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    .accordion-toggle {
+      width: 100%;
+      background-color: #444;
+      color: white;
+      padding: 1em;
+      text-align: left;
+      border: none;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .accordion-toggle:hover {
+      background-color: #555;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      background-color: #222;
+      padding: 0 1em;
+    }
+
+    .accordion-content p {
+      margin: 1em 0;
+      color: #ccc;
+    }
+
+    .cover {
       width: 100%;
       display: flex;
-      flex-direction: column; /* Расставляем картинки вертикально */
-      align-items: center; /* Выравниваем контейнеры по центру */
-      justify-content: center; /* Центрируем содержимое по вертикали */
+      justify-content: center;
+      margin: 2em 0;
+    }
+
+    .cover img {
+      width: 90%;
+      height: auto;
+      border: 4px solid white;
+    }
+
+    .scroll-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .page-holder {
       width: 100%;
       display: flex;
-      justify-content: center; /* Центрируем изображение внутри контейнера */
-      margin: 0;
-      padding: 0;
+      justify-content: center;
+      margin-bottom: 1em;
     }
 
-    img {
-      display: block; /* Убираем лишние пробелы вокруг изображения */
-      width: 80%; /* Ширина изображения равна ширине контейнера */
-      height: auto; /* Поддерживаем пропорции */
-      margin: 0; /* Убираем отступы */
-      padding: 0; /* Убираем паддинги */
+    img.page {
+      width: 80%;
+      height: auto;
+    }
+
+    footer {
+      background-color: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+      margin-top: 3em;
+    }
+
+    footer a {
+      color: #aaa;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="scroll-container">
-    <div class="page-holder">
-      <img src="images/page1.png" alt="" />
-    </div>
-    <div class="page-holder">
-      <img src="images/page2.png" alt="" />
-    </div>
-    <div class="page-holder">
-      <img src="images/page3.png" alt="" />
-    </div>
-    <div class="page-holder">
-      <img src="images/page4.png" alt="" />
-    </div>
-    <div class="page-holder">
-      <img src="images/page5.png" alt="" />
-    </div>
-    <div class="page-holder">
-      <img src="images/page6.png" alt="" />
-    </div>
-    <div class="page-holder">
-      <img src="images/page7.png" alt="" />
-    </div>
-    <div class="page-holder">
-      <img src="images/page8.png" alt="" />
-    </div>
-    <div class="page-holder">
-      <img src="images/page9.png" alt="" />
+
+  <!-- Навигация (если потребуется) -->
+  <nav>
+    <!-- можно добавить логотип или ссылку -->
+  </nav>
+
+  <!-- Кнопка О проекте -->
+  <div class="accordion-container">
+    <button class="accordion-toggle">О проекте</button>
+    <div class="accordion-content">
+      <p>Между развитием городской инфраструктуры и восприятием горожан всё чаще возникает разрыв. Даже крупные транспортные проекты проходят мимо внимания жителей — о них узнают случайно или слишком поздно.</p>
+      <p>Москва активно развивает велотранспорт: за 5 лет длина велодорожек выросла на 63%, запущен маршрут «Зелёное кольцо», число поездок увеличивается на десятки процентов ежегодно. Но важные изменения остаются фоном — сухие отчёты, официальные карты и формальные публикации не вовлекают.</p>
+      <p>Чтобы сделать информацию доступной и интересной, мы создали дата-комикс — сюжетную историю, основанную на реальных данных. Главный герой — голубь Степан, блогер и горожанин, который на своём опыте открывает, как изменилась Москва для велосипедистов.</p>
+      <p>Наш проект объединяет журналистику, визуализацию данных и искусство комикса, чтобы наглядно и доступно рассказать жителям города о современных возможностях велотранспорта.</p>
+      <p><strong>Авторы:</strong> Даниил Поляков, Елизавета Куликова, Валерия Катаева</p>
     </div>
   </div>
+
+  <!-- Обложка -->
+  <div class="cover">
+    <img src="images/cover.png" alt="Обложка комикса">
+  </div>
+
+  <!-- Комикс -->
+  <div class="scroll-container">
+    <div class="page-holder"><img src="images/page1.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page2.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page3.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page4.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page5.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page6.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page7.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page8.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page9.png" alt="" class="page" /></div>
+  </div>
+
+  <!-- Футер -->
+  <footer>
+    <p>Этот комикс распространяется по лицензии 
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+        Creative Commons Attribution — Некоммерческое использование — С сохранением условий 4.0 Международная (CC BY-NC-SA 4.0)
+      </a>.
+    </p>
+    <p>© 2025, Даниил Поляков, Елизавета Куликова, Валерия Катаева.</p>
+    <p>По вопросам использования или сотрудничества: 
+      <a href="mailto:dan.polyakov.95@mail.ru">dan.polyakov.95@mail.ru</a>
+    </p>
+  </footer>
+
+  <!-- JS: для раскрывающейся плашки -->
+  <script>
+    const toggle = document.querySelector('.accordion-toggle');
+    const content = document.querySelector('.accordion-content');
+
+    toggle.addEventListener('click', () => {
+      content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+    });
+  </script>
+
 </body>
 </html>
