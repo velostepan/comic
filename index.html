@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Комикс</title>
 
-  <!-- Manrope font -->
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Шрифт Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
     html {
@@ -53,23 +53,35 @@
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
-      font-size: 1.2em;
-      color: #000;
-      background-color: rgba(255,255,255,0.7);
-      padding: 0.4em 1em;
-      border-radius: 20px;
-      font-weight: 600;
-      transition: opacity 0.3s;
     }
 
-    .scroll-indicator:hover {
-      opacity: 1;
+    .scroll-indicator a {
+      color: #fff;
+      background-color: #2e5e4e;
+      text-decoration: none;
+      outline: none;
+      padding: 0.5em 1.2em;
+      border-radius: 2em;
+      font-weight: 600;
+      font-size: 1em;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .scroll-indicator a:hover {
+      background-color: #244c3f;
+    }
+
+    .scroll-indicator a::before {
+      content: "↓ ";
+      font-weight: 400;
     }
 
     @media (max-width: 600px) {
-      .scroll-indicator {
-        font-size: 1em;
-        padding: 0.3em 0.8em;
+      .scroll-indicator a {
+        font-size: 0.95em;
+        padding: 0.4em 1em;
       }
 
       .cover img {
@@ -174,11 +186,11 @@
   <div class="cover">
     <img src="images/cover.png" alt="Обложка комикса">
     <div class="scroll-indicator">
-      <a href="#start-comic">↓<span>Листать вниз</span></a>
+      <a href="#start-comic">Листать вниз</a>
     </div>
   </div>
 
-  <!-- Якорь — теперь до "О проекте" -->
+  <!-- Якорь -->
   <a id="start-comic"></a>
 
   <!-- О проекте -->
@@ -186,7 +198,7 @@
     <button class="accordion-toggle">О проекте</button>
     <div class="accordion-content">
       <p>Между развитием городской инфраструктуры и&nbsp;восприятием горожан всё чаще возникает разрыв. Даже крупные транспортные проекты проходят мимо внимания жителей — о&nbsp;них узнают случайно или слишком поздно.</p>
-      <p>Москва активно развивает велотранспорт: за&nbsp;5 лет длина велодорожек выросла на&nbsp;63%, запущен маршрут «Зелёное кольцо», число поездок увеличивается ежегодно. Но важные изменения остаются фоном — сухие отчёты, официальные карты и&nbsp;формальные публикации не вовлекают.</p>
+      <p>Москва активно развивает велотранспорт: за&nbsp;5 лет длина велодорожек выросла на&nbsp;63%, запущен маршрут «Зелёное кольцо», число поездок увеличивается ежегодно. Но&nbsp;важные изменения остаются фоном — сухие отчёты, официальные карты и&nbsp;формальные публикации не вовлекают.</p>
       <p>Чтобы сделать информацию доступной и&nbsp;интересной, мы создали дата-комикс — сюжетную историю, основанную на&nbsp;реальных данных. Главный герой — голубь Степан, блогер и&nbsp;горожанин, который на&nbsp;своём опыте узнаёт, как изменилась Москва для велосипедистов.</p>
       <p>Наш проект объединяет журналистику, визуализацию данных и&nbsp;искусство комикса, чтобы наглядно и&nbsp;доступно рассказать жителям города о&nbsp;современных возможностях велотранспорта.</p>
     </div>
@@ -219,7 +231,7 @@
     </p>
   </footer>
 
-  <!-- JS для раскрывающегося описания -->
+  <!-- JS -->
   <script>
     const toggle = document.querySelector('.accordion-toggle');
     const content = document.querySelector('.accordion-content');
