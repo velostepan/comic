@@ -56,6 +56,29 @@
   text-align: center;
 }
 
+.scroll-indicator a {
+  color: #fff;
+  background-color: #2e5e4e;
+  text-decoration: none;
+  outline: none;
+  padding: 0.7em 1.6em;
+  border-radius: 2em;
+  font-weight: 600;
+  font-size: 1.15em;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-indicator a:hover {
+  background-color: #244c3f;
+}
+
+.scroll-indicator a::before {
+  content: "↓ ";
+  font-weight: 400;
+}
+
 @media (max-width: 768px) {
   .scroll-indicator {
     position: static;
@@ -70,40 +93,6 @@
     padding: 0.6em 1.4em;
   }
 }
-
-    .scroll-indicator a {
-      color: #fff;
-      background-color: #2e5e4e;
-      text-decoration: none;
-      outline: none;
-      padding: 0.7em 1.6em;
-      border-radius: 2em;
-      font-weight: 600;
-      font-size: 1.15em;
-      display: inline-block;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      transition: background-color 0.3s ease;
-    }
-
-    .scroll-indicator a:hover {
-      background-color: #244c3f;
-    }
-
-    .scroll-indicator a::before {
-      content: "↓ ";
-      font-weight: 400;
-    }
-
-    @media (max-width: 768px) {
-      .scroll-indicator {
-        bottom: 16vh;
-      }
-
-      .scroll-indicator a {
-        font-size: 1em;
-        padding: 0.6em 1.4em;
-      }
-    }
 
     .accordion-container {
       margin: 3em auto;
