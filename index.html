@@ -49,12 +49,23 @@
     }
 
     .scroll-indicator {
-      position: absolute;
-      bottom: 12vh;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-    }
+  position: absolute;
+  bottom: 14vh; /* десктоп */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 8vh; /* мобильная версия — ниже */
+  }
+
+  .scroll-indicator a {
+    font-size: 1em;
+    padding: 0.6em 1.4em;
+  }
+}
 
     .scroll-indicator a {
       color: #fff;
@@ -230,14 +241,14 @@
       </a>.
     </p>
 
-    <p>© 2025, Даниил Поляков, Елизавета Куликова, Валерия Катаева.</p>
+    <p>© 2025, Даниил Поляков, Валерия Катаева, Елизавета Куликова.</p>
 
     <p>
       По вопросам использования или сотрудничества: 
       <a href="mailto:dan.polyakov.95@gmail.com">dan.polyakov.95@gmail.com</a>
     </p>
 
-    <p><strong>Источники данных:</strong> ГКУ ЦОДД Москвы, 
+    <p><strong>Источники данных:</strong> ГКУ «ЦОДД», 
       <a href="https://www.velobike.ru/" target="_blank">Велошеринг «Велобайк»</a>, 
       <a href="https://urbanus.ru/" target="_blank">Портал по жилой городской недвижимости Urbanus.ru</a>, 
       <a href="https://gravelo.ru/" target="_blank">Проект Gravelo</a>, 
