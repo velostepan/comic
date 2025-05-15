@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Комикс</title>
+  <title>Дата-комикс о велоинфраструктуре Москвы</title>
 
   <!-- Шрифт Manrope -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -40,12 +40,13 @@
       box-sizing: border-box;
     }
 
+    .cover picture,
     .cover img {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: none; /* убираем 1200px ограничение */
-}
+      width: 100%;
+      height: auto;
+      display: block;
+      max-width: none;
+    }
 
     .scroll-indicator {
       position: absolute;
@@ -60,10 +61,10 @@
       background-color: #2e5e4e;
       text-decoration: none;
       outline: none;
-      padding: 0.5em 1.2em;
+      padding: 0.7em 1.6em;
       border-radius: 2em;
       font-weight: 600;
-      font-size: 1em;
+      font-size: 1.15em;
       display: inline-block;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       transition: background-color 0.3s ease;
@@ -78,14 +79,14 @@
       font-weight: 400;
     }
 
-    @media (max-width: 600px) {
-      .scroll-indicator a {
-        font-size: 0.95em;
-        padding: 0.4em 1em;
+    @media (max-width: 768px) {
+      .scroll-indicator {
+        bottom: 16vh;
       }
 
-      .cover img {
-        padding: 0 0.5em;
+      .scroll-indicator a {
+        font-size: 1em;
+        padding: 0.6em 1.4em;
       }
     }
 
@@ -184,7 +185,10 @@
 
   <!-- Обложка -->
   <div class="cover">
-    <img src="images/cover.png" alt="Обложка комикса">
+    <picture>
+      <source srcset="images/cover_mobile.png" media="(max-width: 768px)">
+      <img src="images/cover_desktop.png" alt="Обложка комикса">
+    </picture>
     <div class="scroll-indicator">
       <a href="#start-comic">Листать вниз</a>
     </div>
@@ -218,32 +222,33 @@
   </div>
 
   <!-- Футер -->
-<footer>
-  <p>
-    Этот комикс распространяется по лицензии 
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
-      Creative Commons Attribution — Некоммерческое использование — С сохранением условий 4.0 Международная (CC BY-NC-SA 4.0)
-    </a>.
-  </p>
+  <footer>
+    <p>
+      Этот комикс распространяется по лицензии 
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+        Creative Commons Attribution — Некоммерческое использование — С сохранением условий 4.0 Международная (CC BY-NC-SA 4.0)
+      </a>.
+    </p>
 
-  <p>© 2025, Даниил Поляков, Елизавета Куликова, Валерия Катаева.</p>
+    <p>© 2025, Даниил Поляков, Елизавета Куликова, Валерия Катаева.</p>
 
-  <p>
-    По вопросам использования или сотрудничества: 
-    <a href="mailto:dan.polyakov.95@gmail.com">dan.polyakov.95@gmail.com</a>
-  </p>
+    <p>
+      По вопросам использования или сотрудничества: 
+      <a href="mailto:dan.polyakov.95@gmail.com">dan.polyakov.95@gmail.com</a>
+    </p>
 
-  <p><strong>Источники данных:</strong> ГКУ ЦОДД Москвы, 
-    <a href="https://www.velobike.ru/" target="_blank">Велошеринг «Велобайк»</a>, 
-    <a href="https://urbanus.ru/" target="_blank">Портал по жилой городской недвижимости Urbanus.ru</a>, 
-    <a href="https://gravelo.ru/" target="_blank">Проект Gravelo</a>, 
-    <a href="https://tass.ru/" target="_blank">Информационное агентство ТАСС</a>, 
-    <a href="https://www.m24.ru/" target="_blank">Портал Москва24</a>, 
-    <a href="https://www.pogodaiklimat.ru/weather.php?id=27612" target="_blank">Архив погоды в Москве</a>, 
-    <a href="https://gucodd.ru/green-ring" target="_blank">Официальный сайт проекта «Зелёное кольцо»</a>, 
-    <a href="https://t.me/porazavelo" target="_blank">Телеграм-канал «Пора за вело»</a>.
-  </p>
-</footer>
+    <p><strong>Источники данных:</strong> ГКУ ЦОДД Москвы, 
+      <a href="https://www.velobike.ru/" target="_blank">Велошеринг «Велобайк»</a>, 
+      <a href="https://urbanus.ru/" target="_blank">Портал по жилой городской недвижимости Urbanus.ru</a>, 
+      <a href="https://gravelo.ru/" target="_blank">Проект Gravelo</a>, 
+      <a href="https://tass.ru/" target="_blank">Информационное агентство ТАСС</a>, 
+      <a href="https://www.m24.ru/" target="_blank">Портал Москва24</a>, 
+      <a href="https://www.pogodaiklimat.ru/weather.php?id=27612" target="_blank">Архив погоды в Москве</a>, 
+      <a href="https://gucodd.ru/green-ring" target="_blank">Официальный сайт проекта «Зелёное кольцо»</a>, 
+      <a href="https://t.me/porazavelo" target="_blank">Телеграм-канал «Пора за вело»</a>, 
+      <a href="https://rusneb.ru/collections/1684_zhurnal_tsiklist/" target="_blank">веложурнал «Циклист»</a>.
+    </p>
+  </footer>
 
   <!-- JS -->
   <script>
