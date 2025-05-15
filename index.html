@@ -82,20 +82,13 @@
 
 @media (max-width: 768px) {
   .scroll-indicator {
-    position: static;
-    margin: 1.5em auto 0 auto;
-    transform: none;
-    text-align: center;
-    width: 100%;
+    bottom: auto;
+    top: 85%; /* ⬅️ вот эта строчка работает! */
   }
 
   .scroll-indicator a {
     font-size: 1em;
     padding: 0.6em 1.4em;
-  }
-
-  .cover img {
-    padding: 0 0.5em;
   }
 }
 
