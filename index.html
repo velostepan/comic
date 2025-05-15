@@ -38,7 +38,7 @@
   position: relative;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden; /* чтобы не было голубой полосы */
+  overflow: hidden;
 }
 
 .cover picture,
@@ -51,7 +51,7 @@
 
 .scroll-indicator {
   position: absolute;
-  bottom: 12vh;
+  bottom: 14vh;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -82,16 +82,20 @@
 
 @media (max-width: 768px) {
   .scroll-indicator {
-    position: relative;
-    bottom: auto;
-    margin-top: 1.2em;
+    position: static;
+    margin: 1.5em auto 0 auto;
     transform: none;
     text-align: center;
+    width: 100%;
   }
 
   .scroll-indicator a {
     font-size: 1em;
     padding: 0.6em 1.4em;
+  }
+
+  .cover img {
+    padding: 0 0.5em;
   }
 }
 
