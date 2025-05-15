@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Комикс</title>
 
-  <!-- Подключаем шрифт Manrope -->
+  <!-- Manrope font -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -16,7 +16,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #333;
+      background-color: #2c2c2c;
       color: #fff;
       font-family: 'Manrope', sans-serif;
       font-size: 18px;
@@ -31,52 +31,50 @@
 
     .cover {
       width: 100%;
-      height: 100vh;
-      background-color: #000;
+      background-color: #cbe3db;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 1em;
+      position: relative;
+      padding: 0;
       box-sizing: border-box;
     }
 
     .cover img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      max-width: 1200px;
+      height: auto;
+      display: block;
     }
 
-    .scroll-down {
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2vh;
+      left: 50%;
+      transform: translateX(-50%);
       text-align: center;
-      margin-top: -2em;
-      position: relative;
-      z-index: 10;
-      font-size: 1.5em;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .scroll-down a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      opacity: 0.7;
+      font-size: 1.2em;
+      color: #000;
+      background-color: rgba(255,255,255,0.7);
+      padding: 0.4em 1em;
+      border-radius: 20px;
+      font-weight: 600;
       transition: opacity 0.3s;
     }
 
-    .scroll-down a:hover {
+    .scroll-indicator:hover {
       opacity: 1;
     }
 
-    .scroll-down span {
-      display: block;
-      font-size: 0.8em;
-      margin-top: 0.3em;
-    }
+    @media (max-width: 600px) {
+      .scroll-indicator {
+        font-size: 1em;
+        padding: 0.3em 0.8em;
+      }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      .cover img {
+        padding: 0 0.5em;
+      }
     }
 
     .accordion-container {
@@ -133,10 +131,12 @@
     }
 
     .scroll-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 4em;
+      max-width: 960px;
+      margin: 4em auto;
+      padding: 1em;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .page-holder {
@@ -147,8 +147,9 @@
     }
 
     img.page {
-      width: 80%;
+      width: 100%;
       height: auto;
+      display: block;
     }
 
     footer {
@@ -172,26 +173,24 @@
   <!-- Обложка -->
   <div class="cover">
     <img src="images/cover.png" alt="Обложка комикса">
-  </div>
-
-  <!-- Стрелка вниз -->
-  <div class="scroll-down">
-    <a href="#start-comic">↓<span>Листать вниз</span></a>
-  </div>
-
-  <!-- Кнопка и описание -->
-  <div class="accordion-container">
-    <button class="accordion-toggle">О проекте</button>
-    <div class="accordion-content">
-      <p>Между развитием городской инфраструктуры и восприятием горожан всё чаще возникает разрыв. Даже крупные транспортные проекты проходят мимо внимания жителей — о них узнают случайно или слишком поздно.</p>
-      <p>Москва активно развивает велотранспорт: за 5 лет длина велодорожек выросла на 63%, запущен маршрут «Зелёное кольцо», число поездок увеличивается ежегодно. Но важные изменения остаются фоном — сухие отчёты, официальные карты и формальные публикации не вовлекают.</p>
-      <p>Чтобы сделать информацию доступной и интересной, мы создали дата-комикс — сюжетную историю, основанную на реальных данных. Главный герой — голубь Степан, блогер и горожанин, который на своём опыте узнаёт, как изменилась Москва для велосипедистов.</p>
-      <p>Наш проект объединяет журналистику, визуализацию данных и искусство комикса, чтобы наглядно и доступно рассказать жителям города о современных возможностях велотранспорта.</p>
+    <div class="scroll-indicator">
+      <a href="#start-comic">↓<span>Листать вниз</span></a>
     </div>
   </div>
 
-  <!-- Якорь для прокрутки -->
+  <!-- Якорь — теперь до "О проекте" -->
   <a id="start-comic"></a>
+
+  <!-- О проекте -->
+  <div class="accordion-container">
+    <button class="accordion-toggle">О проекте</button>
+    <div class="accordion-content">
+      <p>Между развитием городской инфраструктуры и&nbsp;восприятием горожан всё чаще возникает разрыв. Даже крупные транспортные проекты проходят мимо внимания жителей — о&nbsp;них узнают случайно или слишком поздно.</p>
+      <p>Москва активно развивает велотранспорт: за&nbsp;5 лет длина велодорожек выросла на&nbsp;63%, запущен маршрут «Зелёное кольцо», число поездок увеличивается ежегодно. Но важные изменения остаются фоном — сухие отчёты, официальные карты и&nbsp;формальные публикации не вовлекают.</p>
+      <p>Чтобы сделать информацию доступной и&nbsp;интересной, мы создали дата-комикс — сюжетную историю, основанную на&nbsp;реальных данных. Главный герой — голубь Степан, блогер и&nbsp;горожанин, который на&nbsp;своём опыте узнаёт, как изменилась Москва для велосипедистов.</p>
+      <p>Наш проект объединяет журналистику, визуализацию данных и&nbsp;искусство комикса, чтобы наглядно и&nbsp;доступно рассказать жителям города о&nbsp;современных возможностях велотранспорта.</p>
+    </div>
+  </div>
 
   <!-- Комикс -->
   <div class="scroll-container">
