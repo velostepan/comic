@@ -30,27 +30,28 @@
     }
 
     .cover {
-      width: 100%;
-      background-color: #cbe3db;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  width: 100%;
+  background-color: #cbe3db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden; /* чтобы не было голубой полосы */
+}
 
-    .cover picture,
-    .cover img {
-      width: 100%;
-      height: auto;
-      display: block;
-      max-width: none;
-    }
+.cover picture,
+.cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: none;
+}
 
-    .scroll-indicator {
+.scroll-indicator {
   position: absolute;
-  bottom: 14vh;
+  bottom: 12vh;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -81,11 +82,11 @@
 
 @media (max-width: 768px) {
   .scroll-indicator {
-    position: static;
-    margin: 1.5em auto 0 auto;
+    position: relative;
+    bottom: auto;
+    margin-top: 1.2em;
     transform: none;
     text-align: center;
-    width: 100%;
   }
 
   .scroll-indicator a {
