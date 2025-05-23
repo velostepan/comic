@@ -29,27 +29,41 @@
       }
     }
 
-    .language-switcher {
+    /* Новая полоска для переключателя языка */
+    .language-switcher-bar {
+      background-color: #2e5e4e;
+      color: #fff;
+      padding: 0.4em 1em;
+      text-align: right;
+      font-weight: 600;
+      font-size: 0.95em;
+      font-family: 'Manrope', sans-serif;
+      user-select: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       position: fixed;
-      top: 1em;
-      right: 1em;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
     }
 
-    .language-switcher a {
-      background-color: #2e5e4e;
+    .language-switcher-bar a {
       color: #fff;
-      padding: 0.6em 1.2em;
-      border-radius: 2em;
-      font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      border-radius: 2em;
+      padding: 0.3em 0.9em;
+      background-color: #3a7c66;
       transition: background-color 0.3s ease;
-      font-size: 0.95em;
+      display: inline-block;
     }
 
-    .language-switcher a:hover {
-      background-color: #244c3f;
+    .language-switcher-bar a:hover {
+      background-color: #2d6451;
+    }
+
+    /* Отступ для body, чтобы полоска не накладывалась на контент */
+    body {
+      padding-top: 2.6em; /* примерно высота language-switcher-bar */
     }
 
     .cover {
@@ -209,9 +223,9 @@
 
 <body>
 
-  <!-- Language switcher -->
-  <div class="language-switcher">
-    <a href="/comic/">Русский</a>
+  <!-- Language switcher as top bar -->
+  <div class="language-switcher-bar">
+    <a href="/comic/">Русская версия</a>
   </div>
 
   <!-- Cover -->
