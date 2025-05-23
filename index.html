@@ -29,18 +29,33 @@
       }
     }
 
-    /* Кнопка переключения языка сверху */
-    .lang-switcher {
-      text-align: right;
-      padding: 1em;
+    /* Language bar on top */
+    .language-bar {
+      width: 100%;
       background-color: #2e5e4e;
+      text-align: right;
+      padding: 0.3em 1.5em;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      transition: transform 0.3s ease;
     }
 
-    .lang-switcher a {
+    .language-link {
       color: #fff;
-      text-decoration: underline;
       font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95em;
       cursor: pointer;
+    }
+
+    .language-link:hover {
+      text-decoration: underline;
+    }
+
+    .language-bar.hidden {
+      transform: translateY(-100%);
     }
 
     .cover {
@@ -199,9 +214,9 @@
 
 <body>
 
-  <!-- Кнопка переключения языка -->
-  <div class="lang-switcher">
-    <a href="index_en.html">English version</a>
+  <!-- Языковая панель -->
+  <div class="language-bar">
+    <a href="index_en.html" class="language-link">English version</a>
   </div>
 
   <!-- Обложка -->
