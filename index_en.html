@@ -29,41 +29,32 @@
       }
     }
 
-    /* Новая полоска для переключателя языка */
-    .language-switcher-bar {
+    /* Language bar on top */
+    .language-bar {
+      width: 100%;
       background-color: #2e5e4e;
-      color: #fff;
-      padding: 0.4em 1em;
       text-align: right;
-      font-weight: 600;
-      font-size: 0.95em;
-      font-family: 'Manrope', sans-serif;
-      user-select: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      position: fixed;
+      padding: 0.3em 1.5em;
+      box-sizing: border-box;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
+      z-index: 1100;
+      transition: transform 0.3s ease;
     }
 
-    .language-switcher-bar a {
+    .language-link {
       color: #fff;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 2em;
-      padding: 0.3em 0.9em;
-      background-color: #3a7c66;
-      transition: background-color 0.3s ease;
-      display: inline-block;
+      font-size: 0.95em;
     }
 
-    .language-switcher-bar a:hover {
-      background-color: #2d6451;
+    .language-link:hover {
+      text-decoration: underline;
     }
 
-    /* Отступ для body, чтобы полоска не накладывалась на контент */
-    body {
-      padding-top: 2.6em; /* примерно высота language-switcher-bar */
+    .language-bar.hidden {
+      transform: translateY(-100%);
     }
 
     .cover {
@@ -223,16 +214,16 @@
 
 <body>
 
-  <!-- Language switcher as top bar -->
-  <div class="language-switcher-bar">
-    <a href="/comic/">Русская версия</a>
+  <!-- Language bar -->
+  <div class="language-bar">
+    <a href="/comic/ru/" class="language-link">Русская версия</a>
   </div>
 
   <!-- Cover -->
   <div class="cover">
     <picture>
       <source srcset="images/cover_mobile_en.png" media="(max-width: 768px)">
-      <img src="images/cover_desktop_en.png" alt="Comic cover">
+      <img src="images/cover_desktop_en.png" alt="Comic cover" />
     </picture>
     <div class="scroll-indicator">
       <a href="#start-comic">Scroll&nbsp;down</a>
@@ -297,6 +288,7 @@
 
   <!-- JS -->
   <script>
+    // Accordion toggle
     const toggle = document.querySelector('.accordion-toggle');
     const content = document.querySelector('.accordion-content');
 
@@ -306,6 +298,22 @@
       } else {
         content.style.maxHeight = content.scrollHeight + "px";
       }
+    });
+
+    // Hide/show language bar on scroll
+    let lastScroll = 0;
+    const langBar = document.querySelector('.language-bar');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        // scrolling down
+        langBar.classList.add('hidden');
+      } else {
+        // scrolling up
+        langBar.classList.remove('hidden');
+      }
+      lastScroll = currentScroll;
     });
   </script>
 
