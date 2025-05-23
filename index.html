@@ -29,68 +29,82 @@
       }
     }
 
+    /* Кнопка переключения языка сверху */
+    .lang-switcher {
+      text-align: right;
+      padding: 1em;
+      background-color: #222;
+    }
+
+    .lang-switcher a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
     .cover {
-  width: 100%;
-  background-color: #cbe3db;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-}
+      width: 100%;
+      background-color: #cbe3db;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
 
-.cover picture,
-.cover img {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: none;
-}
+    .cover picture,
+    .cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-width: none;
+    }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 14vh;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
+    .scroll-indicator {
+      position: absolute;
+      bottom: 14vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
 
-.scroll-indicator a {
-  color: #fff;
-  background-color: #2e5e4e;
-  text-decoration: none;
-  outline: none;
-  padding: 0.7em 1.6em;
-  border-radius: 2em;
-  font-weight: 600;
-  font-size: 1.15em;
-  display: inline-block;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease;
-}
+    .scroll-indicator a {
+      color: #fff;
+      background-color: #2e5e4e;
+      text-decoration: none;
+      outline: none;
+      padding: 0.7em 1.6em;
+      border-radius: 2em;
+      font-weight: 600;
+      font-size: 1.15em;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
 
-.scroll-indicator a:hover {
-  background-color: #244c3f;
-}
+    .scroll-indicator a:hover {
+      background-color: #244c3f;
+    }
 
-.scroll-indicator a::before {
-  content: "↓ ";
-  font-weight: 400;
-}
+    .scroll-indicator a::before {
+      content: "↓ ";
+      font-weight: 400;
+    }
 
-@media (max-width: 768px) {
-  .scroll-indicator {
-    bottom: auto;
-    top: 85%; /* ⬅️ вот эта строчка работает! */
-  }
+    @media (max-width: 768px) {
+      .scroll-indicator {
+        bottom: auto;
+        top: 85%; /* ⬅️ вот эта строчка работает! */
+      }
 
-  .scroll-indicator a {
-    font-size: 1em;
-    padding: 0.6em 1.4em;
-  }
-}
+      .scroll-indicator a {
+        font-size: 1em;
+        padding: 0.6em 1.4em;
+      }
+    }
 
     .accordion-container {
       margin: 3em auto;
@@ -184,6 +198,11 @@
 </head>
 
 <body>
+
+  <!-- Кнопка переключения языка -->
+  <div class="lang-switcher">
+    <a href="index_en.html">English version</a>
+  </div>
 
   <!-- Обложка -->
   <div class="cover">
