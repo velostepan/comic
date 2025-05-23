@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Comic about Moscow's Cycling Infrastructure</title>
+
+  <!-- Manrope font -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #2c2c2c;
+      color: #fff;
+      font-family: 'Manrope', sans-serif;
+      font-size: 18px;
+      overflow-x: hidden;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+    }
+
+    .language-switcher {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      z-index: 1000;
+    }
+
+    .language-switcher a {
+      background-color: #2e5e4e;
+      color: #fff;
+      padding: 0.6em 1.2em;
+      border-radius: 2em;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+      font-size: 0.95em;
+    }
+
+    .language-switcher a:hover {
+      background-color: #244c3f;
+    }
+
+    .cover {
+      width: 100%;
+      background-color: #cbe3db;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .cover picture,
+    .cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-width: none;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 14vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .scroll-indicator a {
+      color: #fff;
+      background-color: #2e5e4e;
+      text-decoration: none;
+      outline: none;
+      padding: 0.7em 1.6em;
+      border-radius: 2em;
+      font-weight: 600;
+      font-size: 1.15em;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .scroll-indicator a:hover {
+      background-color: #244c3f;
+    }
+
+    .scroll-indicator a::before {
+      content: "↓ ";
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+      .scroll-indicator {
+        bottom: auto;
+        top: 85%;
+      }
+
+      .scroll-indicator a {
+        font-size: 1em;
+        padding: 0.6em 1.4em;
+      }
+    }
+
+    .accordion-container {
+      margin: 3em auto;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      background-color: #1f1f1f;
+    }
+
+    .accordion-toggle {
+      width: 100%;
+      background-color: #2d2d2d;
+      color: white;
+      padding: 1.2em;
+      text-align: left;
+      border: none;
+      font-size: 1.2em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .accordion-toggle:hover {
+      background-color: #3a3a3a;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      background-color: #1f1f1f;
+      padding: 0 1.5em;
+    }
+
+    .accordion-content p {
+      margin: 1.2em 0;
+      color: #ddd;
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .accordion-toggle {
+        font-size: 1em;
+        padding: 1em;
+      }
+
+      .accordion-content p {
+        font-size: 1em;
+      }
+    }
+
+    .scroll-container {
+      max-width: 960px;
+      margin: 4em auto;
+      padding: 1em;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      color: #000;
+    }
+
+    .page-holder {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1em;
+    }
+
+    img.page {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    footer {
+      background-color: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+      margin-top: 3em;
+    }
+
+    footer a {
+      color: #aaa;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Language switcher -->
+  <div class="language-switcher">
+    <a href="/comic/">Русский</a>
+  </div>
+
+  <!-- Cover -->
+  <div class="cover">
+    <picture>
+      <source srcset="images/cover_mobile_en.png" media="(max-width: 768px)">
+      <img src="images/cover_desktop_en.png" alt="Comic cover">
+    </picture>
+    <div class="scroll-indicator">
+      <a href="#start-comic">Scroll&nbsp;down</a>
+    </div>
+  </div>
+
+  <!-- Anchor -->
+  <a id="start-comic"></a>
+
+  <!-- About the Project -->
+  <div class="accordion-container">
+    <button class="accordion-toggle">About&nbsp;the&nbsp;Project</button>
+    <div class="accordion-content">
+      <p>Urban infrastructure is evolving rapidly&nbsp;&mdash;&nbsp;yet a disconnect is growing between these changes and public awareness of them. Even large-scale transportation projects often go unnoticed until it&rsquo;s too late or discovered purely by chance.</p>
+      <p>In recent years, Moscow has made bold strides in promoting cycling: over the past five years, the length of bike lanes has increased by 63%, the &quot;Green Ring&quot; cycling route was launched, and the number of rides has surged. Yet these important developments are often buried in dry reports, technical maps, and impersonal press releases&nbsp;&mdash;&nbsp;failing to engage the people they&rsquo;re meant for.</p>
+      <p>To make this information more accessible and compelling, we created a comic based&nbsp;on&nbsp;real data. The story follows Stepan the pigeon&nbsp;&mdash;&nbsp;a blogger and everyday city dweller&nbsp;&mdash;&nbsp;as he discovers how Moscow has changed for cyclists.</p>
+      <p>Blending journalism, data visualization, and the art of comics, our project brings modern cycling infrastructure to life and helps residents explore the city&rsquo;s new opportunities from&nbsp;a fresh perspective.</p>
+    </div>
+  </div>
+
+  <!-- Comic pages -->
+  <div class="scroll-container">
+    <div class="page-holder"><img src="images/page1_en.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page2_en.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page3_en.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page4_en.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page5_en.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page6_en.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page7_en.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page8_en.png" alt="" class="page" /></div>
+    <div class="page-holder"><img src="images/page9_en.png" alt="" class="page" /></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      This comic is distributed under the 
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">
+        Creative Commons Attribution&nbsp;&mdash;&nbsp;NonCommercial&nbsp;&mdash;&nbsp;ShareAlike 4.0 International License (CC BY-NC-SA 4.0)
+      </a>.
+    </p>
+
+    <p>© 2025, Daniil Polyakov, Valeria Kataeva, Elizaveta Kulikova.</p>
+
+    <p>
+      For inquiries regarding use or collaboration: 
+      <a href="mailto:dan.polyakov.95@gmail.com">dan.polyakov.95@gmail.com</a>
+    </p>
+
+    <p><strong>Data sources:</strong> Moscow Traffic Control Center (MTCC), 
+      <a href="https://www.velobike.ru/" target="_blank" rel="noopener noreferrer">VeloBike bikesharing service</a>, 
+      <a href="https://urbanus.ru/" target="_blank" rel="noopener noreferrer">Urbanus.ru (urban housing portal)</a>, 
+      <a href="https://gravelo.ru/" target="_blank" rel="noopener noreferrer">Gravelo project</a>, 
+      <a href="https://tass.ru/" target="_blank" rel="noopener noreferrer">TASS news agency</a>, 
+      <a href="https://www.m24.ru/" target="_blank" rel="noopener noreferrer">Moskva24 portal</a>, 
+      <a href="https://www.pogodaiklimat.ru/weather.php?id=27612" target="_blank" rel="noopener noreferrer">Moscow weather archive</a>, 
+      <a href="https://gucodd.ru/green-ring" target="_blank" rel="noopener noreferrer">official Green Ring project website</a>, 
+      <a href="https://t.me/porazavelo" target="_blank" rel="noopener noreferrer">Telegram channel Time for Velo</a>, 
+      <a href="https://rusneb.ru/collections/1684_zhurnal_tsiklist/" target="_blank" rel="noopener noreferrer">cycling magazine Tsiklist</a>.
+    </p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const toggle = document.querySelector('.accordion-toggle');
+    const content = document.querySelector('.accordion-content');
+
+    toggle.addEventListener('click', () => {
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  </script>
+
+</body>
+</html>
