@@ -294,6 +294,23 @@
     toggle.addEventListener('click', () => {
       content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
     });
+
+    // Hide/show language bar on scroll
+    let lastScroll = 0;
+    const langBar = document.querySelector('.language-bar');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        // scrolling down
+        langBar.classList.add('hidden');
+      } else {
+        // scrolling up
+        langBar.classList.remove('hidden');
+      }
+      lastScroll = currentScroll;
+    });
+  
   </script>
 
 </body>
